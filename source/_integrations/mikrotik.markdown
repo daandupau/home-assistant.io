@@ -79,11 +79,10 @@ arp_ping:
   required: false
   default: false
   type: boolean
-force_dhcp:
-  description: Force use of DHCP server list for devices to be tracked.
-  required: false
-  default: false
-  type: boolean
+method:
+  description: Set device Detection method
+  possible-positions: wireless, dhcp
+  type: string
 detection_time:
   description: How long since the last seen time before the device is marked away, specified in seconds.
   required: false
@@ -127,8 +126,8 @@ mikrotik:
   - host: 192.168.88.1
     username: homeassistant
     password: YOUR_PASSWORD
-    verify_ssl: true
+    ssl: true
     arp_ping: true
-    force_dhcp: true
+    method: dhcp
     detection_time: 30
 ```
