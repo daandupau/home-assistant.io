@@ -69,7 +69,7 @@ port:
   required: false
   default: 8728 (or 8729 if SSL is enabled)
   type: integer
-verify_ssl:
+ssl:
   description: Use SSL to connect to the API.
   required: false
   default: false
@@ -102,7 +102,7 @@ To use SSL to connect to the API (via `api-ssl` instead of `api` service) furthe
 /ip service enable api-ssl
 ```
 
-Then add `verify_ssl: true` to `mikrotik` device tracker entry in your `configuration.yaml` file.
+Then add `ssl: true` to `mikrotik` device tracker entry in your `configuration.yaml` file.
 
 If everything is working fine you can disable the pure `api` service in RouterOS:
 
